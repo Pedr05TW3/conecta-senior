@@ -4,15 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d3b66">
-  <title>Adicionar Consulta · ConectaSênior</title>
+  <title>Nova consulta · ConectaSênior</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <main class="artboard" id="adicionar-consulta-conectasenior-2" aria-label="Adicionar Consulta">
+  <main class="artboard" id="adicionar-consulta-conectasenior-2" aria-label="Nova consulta">
     <div class="canvas">
-      <i class="shape header-bg" data-node-id="2003:4" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:7" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:10" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:13" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:16" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:18" aria-hidden="true"></i><span class="copy" data-node-id="2003:5">Nova consulta</span><span class="copy" data-node-id="2003:6">Especialidade ou motivo</span><span class="copy" data-node-id="2003:8">Ex.: Cardiologista</span><span class="copy" data-node-id="2003:9">Data</span><span class="copy" data-node-id="2003:11">DD / MM / AAAA</span><span class="copy" data-node-id="2003:12">Horário</span><span class="copy" data-node-id="2003:14">00:00</span><span class="copy" data-node-id="2003:15">Local</span><span class="copy" data-node-id="2003:17">Clínica, endereço ou online</span><span class="copy" data-node-id="2003:19">Salvar consulta</span>
+      <i class="shape header-bg" data-node-id="2003:4" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:7" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:10" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:13" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:16" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:18" aria-hidden="true"></i>
+      <span class="copy" data-node-id="2003:5">Nova consulta</span>
+      <label class="copy" data-node-id="2003:6" for="appointment-specialty">Especialidade ou motivo</label>
+      <label class="copy" data-node-id="2003:9" for="appointment-date">Data</label>
+      <label class="copy" data-node-id="2003:12" for="appointment-time">Horário</label>
+      <label class="copy" data-node-id="2003:15" for="appointment-location">Local</label>
+      <form class="appointment-form" id="appointment-form">
+        <input class="appointment-field" id="appointment-specialty" name="specialty" type="text" placeholder="Ex.: Cardiologista" required>
+        <input class="appointment-field" id="appointment-date" name="date" type="date" required>
+        <input class="appointment-field" id="appointment-time" name="time" type="time" required>
+        <input class="appointment-field" id="appointment-location" name="location" type="text" placeholder="Clínica, endereço ou online" required>
+        <p class="visually-hidden" id="appointment-form-message" role="status" aria-live="polite"></p>
+        <button class="appointment-save-button" type="submit">Salvar consulta</button>
+      </form>
     </div>
-    <a class="hotspot" data-hotspot="adicionar-consulta-conectasenior-2-0" href="/pages/agenda-consultas.html" aria-label="Salvar consulta"></a>
   </main>
+  <script src="/scripts/consultas.js" defer></script>
+  <script src="/scripts/modo-prototipo.js" defer></script>
 </body>
 </html>
+
+

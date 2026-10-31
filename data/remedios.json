@@ -1,0 +1,28 @@
+[
+  {
+    "id": "sample-losartana",
+    "name": "Losartana",
+    "dosage": "50 mg · 1 comprimido",
+    "time": "09:00",
+    "instructions": "Após o café",
+    "duration": "continuous",
+    "durationLabel": "Uso contínuo",
+    "startDate": "2026-09-22",
+    "endDate": null,
+    "sample": true,
+    "status": "TOMADO"
+  },
+  {
+    "id": "sample-metformina",
+    "name": "Metformina",
+    "dosage": "850 mg · 1 comprimido",
+    "time": "19:00",
+    "instructions": "Após o jantar",
+    "duration": "continuous",
+    "durationLabel": "Uso contínuo",
+    "startDate": "2026-09-22",
+    "endDate": null,
+    "sample": true,
+    "status": "PENDENTE"
+  }
+]

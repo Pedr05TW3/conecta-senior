@@ -4,16 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d3b66">
-  <title>Remedio Confirmado · ConectaSênior</title>
+  <title>Detalhes do remédio · ConectaSênior</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <main class="artboard" id="remedio-confirmado-conectasenior-2" aria-label="Remedio Confirmado">
-    <div class="canvas">
-      <i class="shape header-bg" data-node-id="2003:49" aria-hidden="true"></i><i class="shape card-shape" data-node-id="2003:51" aria-hidden="true"></i><i class="shape" data-node-id="2003:52" aria-hidden="true"></i><i class="shape icon-shape" data-node-id="2003:53" aria-hidden="true"></i><i class="shape card-shape" data-node-id="2003:56" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:59" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2003:61" aria-hidden="true"></i><span class="copy" data-node-id="2003:50">Remédio registrado</span><span class="copy" data-node-id="2003:54">Muito bem!</span><span class="copy" data-node-id="2003:55">Losartana registrada às 09:02.</span><span class="copy" data-node-id="2003:57">Próximo lembrete</span><span class="copy" data-node-id="2003:58">Metformina · 19:00</span><span class="copy" data-node-id="2003:60">Voltar para início</span><span class="copy" data-node-id="2003:62">Ver meus remédios</span>
+  <main class="artboard medicine-detail-page" id="medicine-detail-page" aria-label="Detalhes do remédio">
+    <header class="medicine-detail-header"><h1>Detalhes do remédio</h1></header>
+    <div class="medicine-detail-content">
+      <section id="medicine-detail" class="medicine-detail-card" aria-live="polite">
+        <h2 id="medicine-detail-name">Carregando remédio…</h2>
+        <span id="medicine-detail-status" class="medication-status"></span>
+        <dl id="medicine-detail-fields" class="medicine-detail-fields"></dl>
+      </section>
+      <p id="medicine-detail-message" class="medicine-detail-message" role="status" aria-live="polite"></p>
+      <div class="medicine-detail-actions">
+        <button id="medicine-delete" class="medicine-delete-button" type="button">Excluir</button>
+        <a class="medicine-back-button" href="/pages/meus-remedios.html">Voltar para meus remédios</a>
+      </div>
     </div>
-    <a class="hotspot" data-hotspot="remedio-confirmado-conectasenior-2-0" href="/pages/inicio-idoso.html" aria-label="Voltar para início"></a>
-    <a class="hotspot" data-hotspot="remedio-confirmado-conectasenior-2-1" href="/pages/meus-remedios.html" aria-label="Ver meus remédios"></a>
   </main>
+  <script src="/scripts/remedios.js" defer></script>
+  <script src="/scripts/modo-prototipo.js" defer></script>
 </body>
 </html>

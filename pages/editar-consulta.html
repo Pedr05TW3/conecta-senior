@@ -4,15 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d3b66">
-  <title>Adicionar Consulta · ConectaSênior</title>
+  <title>Editar consulta · ConectaSênior</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <main class="artboard" id="adicionar-consulta-conectasenior-3" aria-label="Adicionar Consulta">
-    <div class="canvas">
-      <i class="shape header-bg" data-node-id="2021:6" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2021:9" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2021:12" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2021:15" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2021:18" aria-hidden="true"></i><i class="shape button-shape" data-node-id="2021:20" aria-hidden="true"></i><span class="copy" data-node-id="2021:7">Editar consulta</span><span class="copy" data-node-id="2021:8">Especialidade ou motivo</span><span class="copy" data-node-id="2021:10">Ex.: Cardiologista</span><span class="copy" data-node-id="2021:11">Data</span><span class="copy" data-node-id="2021:13">DD / MM / AAAA</span><span class="copy" data-node-id="2021:14">Horário</span><span class="copy" data-node-id="2021:16">00:00</span><span class="copy" data-node-id="2021:17">Local</span><span class="copy" data-node-id="2021:19">Clínica, endereço ou online</span><span class="copy" data-node-id="2021:21">Salvar consulta</span>
+  <main class="artboard edit-consulta-page" id="editar-consulta-page" aria-label="Editar consulta">
+    <header class="edit-consulta-header">
+      <h1>Editar consulta</h1>
+    </header>
+    <div class="edit-consulta-content">
+      <form class="edit-consulta-form" id="appointment-form">
+        <div class="edit-field-group">
+          <label for="edit-specialty">Especialidade ou motivo</label>
+          <input id="edit-specialty" name="specialty" type="text" placeholder="Ex.: Cardiologista" required>
+        </div>
+        <div class="edit-field-group">
+          <label for="edit-date">Data</label>
+          <input id="edit-date" name="date" type="date" required>
+        </div>
+        <div class="edit-field-group">
+          <label for="edit-time">Horário</label>
+          <input id="edit-time" name="time" type="time" required>
+        </div>
+        <div class="edit-field-group">
+          <label for="edit-location">Local</label>
+          <input id="edit-location" name="location" type="text" placeholder="Clínica, endereço ou online" required>
+        </div>
+        <div class="edit-map-group">
+          <iframe id="appointment-map" class="edit-consulta-map" title="Mapa do endereço da consulta" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="visually-hidden" id="appointment-form-message" role="status" aria-live="polite"></p>
+        <div class="edit-consulta-actions">
+          <button class="edit-save-button" type="submit">Salvar consulta</button>
+          <a class="edit-cancel-button" href="/pages/agenda-consultas.html">Cancelar</a>
+        </div>
+      </form>
     </div>
-    <a class="hotspot" data-hotspot="adicionar-consulta-conectasenior-3-0" href="/pages/detalhes-consulta.html" aria-label="Salvar consulta"></a>
   </main>
+  <script src="/scripts/consultas.js" defer></script>
+  <script src="/scripts/modo-prototipo.js" defer></script>
 </body>
 </html>

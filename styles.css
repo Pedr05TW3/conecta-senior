@@ -14,7 +14,7 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:flex-start
 .button-shape{background:#1769aa;border:0;border-radius:12px}
 .icon-shape{background:#eaf3f8;border:0;border-radius:50%}
 .bottom-nav-bar{background:#fff;border:0;border-top:1px solid #dce6ed;border-radius:0}
-.hotspot{position:absolute;z-index:5;display:block;background:transparent;color:transparent;text-decoration:none}
+.hotspot{position:absolute;z-index:5;display:block;background:transparent;color:transparent;text-decoration:none;color: white;}
 .hotspot:focus-visible{outline:3px solid #f3bb30;outline-offset:2px;border-radius:8px}
 @media(max-width:393px){.artboard{width:100vw}}
 
@@ -473,7 +473,7 @@ a[data-hotspot="ligacao-normal-0"]{left:116px;top:708px;width:162px;height:25px}
 [data-node-id="2003:77"]{left:24px;top:554px;width:345px;height:60px}
 [data-node-id="2003:79"]{left:24px;top:676px;width:345px;height:65px}
 [data-node-id="2003:66"]{left:24px;top:41px;width:218px;height:31px;font-size:24px;}
-[data-node-id="2003:67"]{left:24px;top:135px;width:152px;height:22px;font-size:17px;}
+[data-node-id="2003:67"]{left:24px;top:135px;width:152px;height:22px;font-size:17px; }
 [data-node-id="2003:69"]{left:45px;top:191px;width:110px;height:22px;font-size:17px;}
 [data-node-id="2003:70"]{left:24px;top:263px;width:80px;height:22px;font-size:17px;}
 [data-node-id="2003:72"]{left:45px;top:319px;width:84px;height:22px;font-size:17px;}
@@ -594,9 +594,21 @@ a[data-hotspot="recuperar-senha-conectasenior-1"]{left:24px;top:536px;width:345p
 [data-node-id="2003:191"]{left:48.5px;top:579px;width:113px;height:22px;font-size:17px;}
 [data-node-id="2003:193"]{left:227px;top:580px;width:120px;height:21px;font-size:17px;}
 [data-node-id="2003:195"]{left:143.5px;top:696px;width:105px;height:25px;font-size:19px;}
-a[data-hotspot="criar-conta-conectasenior-0"]{left:24px;top:560px;width:163px;height:57px}
-a[data-hotspot="criar-conta-conectasenior-1"]{left:206px;top:560px;width:163px;height:57px}
-a[data-hotspot="criar-conta-conectasenior-2"]{left:24px;top:674px;width:345px;height:65px}
+.signup-form{position:absolute;inset:0;z-index:4}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.signup-input{position:absolute;left:24px;width:345px;height:54px;padding:0 20px;border:0;border-radius:10px;background:transparent;color:#1f2933;font:17px 'Atkinson Hyperlegible',Arial,sans-serif;outline:none}
+.signup-input:focus{box-shadow:0 0 0 3px #f3bb30}
+.signup-input::placeholder{color:#667783;opacity:1}
+.signup-name{top:212px}.signup-email{top:328px}.signup-password{top:444px}
+.profile-options{position:absolute;left:24px;top:560px;width:345px;height:57px;margin:0;padding:0;border:0}
+.profile-option{position:absolute;top:0;height:57px;border-radius:10px;cursor:pointer}
+.profile-senior{left:0;width:163px}.profile-companion{right:0;width:163px}
+.profile-option:has(input:checked){box-shadow:inset 0 0 0 3px #1769aa;  color: white !important;}
+.profile-option input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.profile-option:focus-within{outline:3px solid #f3bb30;outline-offset:2px}
+.signup-submit{position:absolute;left:24px;top:674px;width:345px;height:65px;border:0;border-radius:12px;background:transparent;color:white;font:700 19px 'Atkinson Hyperlegible',Arial,sans-serif;cursor:pointer}
+.signup-cancel{position:absolute;left:24px;top:754px;width:345px;height:65px;border:0;border-radius:12px;background:#0d3b66;color:white;font:700 19px 'Atkinson Hyperlegible',Arial,sans-serif;cursor:pointer}
+.signup-submit:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
 [data-node-id="2003:156"]{left:0px;top:0px;width:393px;height:104px}
 [data-node-id="2003:159"]{left:24px;top:180px;width:345px;height:86px}
 [data-node-id="2003:161"]{left:320px;top:209px;width:28px;height:28px}
@@ -742,3 +754,169 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .medication-card p{margin:7px 0 0;font-size:13px;line-height:1.3}
 .medication-dosage{font-weight:500}.medication-schedule{color:#536a7f}.medication-period{color:#1769aa;font-size:11px!important}
 @media(max-height:820px){.medication-list{max-height:calc(100% - 360px)}}
+
+/* Seletor de perfil fora do quadro do protótipo */
+.profile-mode-switcher{position:fixed;z-index:50;top:20px;left:calc(50% + 205px);font-family:'Atkinson Hyperlegible',Arial,sans-serif;color:#183b5b}
+.profile-mode-toggle{display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid #d5e2ed;border-radius:999px;background:#fff;color:#0d3b66;font:700 14px 'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 5px 18px #0d3b6620;cursor:pointer}
+.profile-mode-toggle span:first-child{font-size:18px}
+.profile-mode-panel{position:absolute;top:0;left:calc(100% + 12px);width:270px;padding:20px;border:1px solid #dce6ee;border-radius:18px;background:#fff;box-shadow:0 14px 40px #0d3b6626;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(12px);transition:opacity .18s ease,transform .18s ease,visibility .18s}
+.profile-mode-switcher.is-open .profile-mode-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(0)}
+.profile-mode-eyebrow{margin:0 0 5px;color:#5080a2;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+.profile-mode-panel h2{margin:0 0 15px;color:#0d3b66;font-size:19px}
+.profile-mode-choice{width:100%;display:flex;align-items:center;gap:12px;margin-top:9px;padding:12px;border:1px solid #dce6ee;border-radius:12px;background:#fff;color:#1769aa;text-align:left;cursor:pointer}
+.profile-mode-choice>span:first-child{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#eaf3f8;font-size:20px}
+.profile-mode-choice strong,.profile-mode-choice small{display:block}
+.profile-mode-choice strong{font-size:14px}.profile-mode-choice small{margin-top:3px;color:#647b8e;font-size:11px}
+.profile-mode-current{margin:14px 0 0;color:#657d90;font-size:12px}.profile-mode-current strong{color:#0d3b66}
+/* Área externa para o botão inicial ganhar ao menos 20px em cada lado */
+[data-node-id="2001:1083"]{left:54px;width:285px}
+/* Acompanhamento de consultas */
+#agenda-consultas-conectasenior [data-node-id="2001:1251"],#agenda-consultas-conectasenior [data-node-id="2001:1252"],#agenda-consultas-conectasenior [data-node-id="2001:1253"],#agenda-consultas-conectasenior [data-node-id="2001:1254"],#agenda-consultas-conectasenior [data-node-id="2001:1255"],#agenda-consultas-conectasenior [data-node-id="2001:1256"],#agenda-consultas-conectasenior [data-node-id="2001:1257"],#agenda-consultas-conectasenior [data-node-id="2001:1258"],#agenda-consultas-conectasenior [data-node-id="2001:1259"],#agenda-consultas-conectasenior [data-node-id="2001:1260"],#agenda-consultas-conectasenior [data-node-id="2001:1261"],#agenda-consultas-conectasenior [data-node-id="2001:1262"],#agenda-consultas-conectasenior [data-node-id="2001:1263"],#agenda-consultas-conectasenior [data-node-id="2001:1264"],#agenda-consultas-conectasenior [data-node-id="2001:1265"],#agenda-consultas-conectasenior [data-node-id="2001:1266"],#agenda-consultas-conectasenior [data-node-id="2001:1267"],#agenda-consultas-conectasenior [data-node-id="2001:1268"],#agenda-consultas-conectasenior [data-node-id="2001:1269"],#agenda-consultas-conectasenior [data-node-id="2001:1270"],#agenda-consultas-conectasenior [data-node-id="2001:1271"]{display:none!important}
+.appointment-list{position:absolute;left:24px;top:172px;width:345px;height:425px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:0 0 5px;z-index:4;scrollbar-width:thin}
+.appointment-card{box-sizing:border-box;min-height:92px;display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #d9e5ed;border-radius:14px;background:#fff;color:#183b5b}
+.appointment-date-badge{width:48px;min-width:48px;height:48px;display:grid;place-items:center;border-radius:9px;background:#1769aa;color:#fff;font-size:12px;font-weight:700;text-align:center}
+.appointment-card{color:inherit;text-decoration:none;cursor:pointer}.appointment-card:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+.appointment-details h2{margin:0;color:#1f2933;font-size:16px;font-weight:700}.appointment-details p{margin:6px 0 0;color:#647b8e;font-size:13px;line-height:1.25}
+.appointment-details strong{display:block;color:#1f2933;font-size:16px;font-weight:700}.appointment-details>span{display:block;margin-top:6px;color:#647b8e;font-size:13px;line-height:1.25}
+/* Formulário para inclusão de consultas */
+.appointment-form{position:absolute;inset:0;z-index:8;pointer-events:none}
+.appointment-field{position:absolute;left:45px;width:295px;height:32px;padding:4px 0;border:0;background:transparent;color:#183b5b;font:400 15px 'Atkinson Hyperlegible',Arial,sans-serif;outline-offset:2px;pointer-events:auto; cursor: pointer;}
+#appointment-specialty{top:181px}#appointment-date{top:306px}#appointment-time{top:431px}#appointment-location{top:556px}
+.appointment-field::placeholder{color:#71869a;opacity:1}
+.appointment-save-button{position:absolute;left:24px;top:671px;width:345px;height:65px;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;cursor:pointer;pointer-events:auto}
+.appointment-cancel-button{position:absolute;left:24px;top:694px;width:345px;height:54px;display:flex;align-items:center;justify-content:center;border:1.5px solid #1769aa;border-radius:12px;background:#fff;color:#1769aa;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer;pointer-events:auto}
+.edit-appointment-form #edit-specialty{top:164px}.edit-appointment-form #edit-date{top:258px}.edit-appointment-form #edit-time{top:352px}
+.edit-appointment-form #edit-location{left:24px;top:446px;width:345px;height:58px;padding:0 20px;border:1.5px solid #1769aa;border-radius:10px;background:#fff;color:#183b5b;font:400 15px 'Atkinson Hyperlegible',Arial,sans-serif}
+.edit-appointment-form #edit-location::placeholder{color:#71869a;opacity:1}
+.appointment-map{position:absolute;left:24px;top:512px;width:345px;height:100px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6;pointer-events:auto}
+#adicionar-consulta-conectasenior-3 [data-node-id="2021:20"]{display:none}
+.edit-appointment-form .appointment-save-button{top:628px;height:54px}
+#adicionar-consulta-conectasenior-3 [data-node-id="2021:8"]{top:132px}
+#adicionar-consulta-conectasenior-3 [data-node-id="2021:11"]{top:226px}
+#adicionar-consulta-conectasenior-3 [data-node-id="2021:14"]{top:320px}
+#adicionar-consulta-conectasenior-3 [data-node-id="2021:17"]{top:414px}
+/* Confirmação e imagem da ligação */
+.call-confirm-canvas{background:#f2f6f9}
+.call-confirm-header{position:absolute;left:0;right:0;top:0;height:104px;display:flex;align-items:center;gap:14px;padding:0 24px;background:#0d3b66;color:#fff}
+.call-confirm-header a{color:#fff;font-size:32px;text-decoration:none}.call-confirm-header h1{margin:0;font-size:22px}
+.call-confirm-card{position:absolute;left:24px;top:158px;width:345px;display:flex;flex-direction:column;align-items:center;padding:30px 22px;border:1px solid #dce6ee;border-radius:18px;background:#fff;text-align:center}
+.call-confirm-icon{width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:#eaf3f8;color:#1769aa;font-size:30px}
+.call-confirm-card h2{margin:18px 0 6px;color:#0d3b66;font-size:22px}.call-confirm-card p{margin:0 0 24px;color:#5f7486;font-size:15px}
+.start-call-button,.cancel-call-link{width:100%;min-height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 16px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.cancel-call-link{margin-top:10px;border:1px solid #1769aa;background:#fff;color:#1769aa}
+.call-screen-board{width:min(393px,100vw);height:auto;aspect-ratio:393/852;overflow:hidden;background:#302a2c}
+.call-screen-image{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.profile-mode-switcher{left:auto;right:12px;top:12px}.profile-mode-panel{position:fixed;top:12px;right:68px;left:auto}}
+@media(max-width:520px){.profile-mode-toggle{padding:10px 12px}.profile-toggle-label{display:none}.profile-mode-panel{width:min(270px,calc(100vw - 92px))}}
+#agenda-consultas-conectasenior a[data-hotspot="agenda-consultas-conectasenior-0"],#agenda-consultas-conectasenior a[data-hotspot="agenda-consultas-conectasenior-1"],#agenda-consultas-conectasenior a[data-hotspot="agenda-consultas-conectasenior-2"]{display:none!important}
+.help-confirmation{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:20px;background:#0d3b6688}
+.help-confirmation[hidden]{display:none}
+.help-confirm-card{width:min(345px,100%);padding:28px 22px;border-radius:18px;background:#fff;text-align:center;box-shadow:0 12px 40px #0d3b6633}
+.help-confirm-card h1{margin:0;color:#0d3b66;font-size:24px}.help-confirm-card p{margin:10px 0 22px;color:#526b7d;font-size:16px}
+.help-confirm-button,.help-cancel-button{width:100%;min-height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 18px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.help-cancel-button{margin-top:10px;border:1px solid #1769aa;background:#fff;color:#1769aa}
+
+/* Títulos nos cabeçalhos azuis */
+.canvas:has(> .header-bg) > .copy:first-of-type{color:#fff!important}
+#home-idoso-conectasenior [data-node-id="2001:1150"],#home-idoso-conectasenior [data-node-id="2001:1151"]{color:#fff!important}
+
+/* Ajustes visuais do painel do cuidador alinhados à tela inicial do idoso */
+#dashboard-familia-conectasenior [data-node-id="2001:1212"],#dashboard-familia-conectasenior [data-node-id="2001:1213"]{color:#fff!important;font-weight:700}
+#dashboard-familia-conectasenior [data-node-id="2001:1212"]{font-size:18px!important;width:215px;height:24px}
+#dashboard-familia-conectasenior [data-node-id="2001:1213"]{top:55px;font-size:28px!important;width:220px;height:39px}
+#dashboard-familia-conectasenior [data-node-id="2001:1216"]{background:#e3f4e9;border:0;border-radius:16px;box-shadow:none}
+#dashboard-familia-conectasenior [data-node-id="2001:1217"]{background:#2e8b57}
+#dashboard-familia-conectasenior [data-node-id="2001:1218"]{color:#fff!important}
+#dashboard-familia-conectasenior [data-node-id="2001:1219"]{color:#225b3e!important;font-weight:700}
+#dashboard-familia-conectasenior [data-node-id="2001:1220"]{color:#557362!important}
+#dashboard-familia-conectasenior [data-node-id="2001:1222"]{top:307px;height:130px;background:#1769aa;border:0;border-radius:15px;box-shadow:none}
+#dashboard-familia-conectasenior [data-node-id="2001:1226"]{top:307px;height:130px;background:#2e8b57;border:0;border-radius:15px;box-shadow:none}
+#dashboard-familia-conectasenior [data-node-id="2001:1223"]{top:324px;font-size:24px!important}
+#dashboard-familia-conectasenior [data-node-id="2001:1224"],#dashboard-familia-conectasenior [data-node-id="2001:1228"]{top:375px;font-size:19px!important}
+#dashboard-familia-conectasenior [data-node-id="2001:1225"],#dashboard-familia-conectasenior [data-node-id="2001:1229"]{top:403px;font-size:16px!important}
+#dashboard-familia-conectasenior [data-node-id="2001:1227"]{top:324px;font-size:24px!important}
+#dashboard-familia-conectasenior [data-node-id="2001:1232"]{background:#1769aa;border:0;border-radius:8px}
+#dashboard-familia-conectasenior [data-node-id="2001:1233"],#dashboard-familia-conectasenior [data-node-id="2001:1234"]{color:#fff!important;font-weight:700}
+#dashboard-familia-conectasenior [data-node-id="2001:1241"]{background:#fff!important;border:1.5px solid #1769aa!important;box-shadow:none}
+#dashboard-familia-conectasenior [data-node-id="2001:1243"]{color:#1769aa!important;font-weight:700}
+.call-screen-board{position:relative}
+.call-screen-back{position:absolute;top:12px;left:12px;width:40px;height:40px;display:grid;place-items:center;border:1px solid #ffffff66;border-radius:50%;background:#102b40b8;color:#fff;text-decoration:none;font:700 24px Arial,sans-serif;z-index:4}
+.call-screen-back:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#dashboard-familia-conectasenior [data-node-id="2001:1239"],#dashboard-familia-conectasenior [data-node-id="2001:1240"]{color:#fff!important;font-weight:700}
+#dashboard-familia-conectasenior [data-node-id="2001:1242"]{color:#1769aa!important}
+
+/* Tela de edição de consulta em fluxo vertical para facilitar ajustes e manutenção */
+.edit-consulta-page{width:min(393px,100vw);height:auto;min-height:100vh;aspect-ratio:auto;overflow:visible;background:#fff}
+.edit-consulta-header{height:104px;display:flex;align-items:center;padding:0 24px;background:#0d3b66;color:#fff}
+.edit-consulta-header h1{margin:0;color:#fff;font-size:24px;font-weight:700}
+.edit-consulta-content{padding:20px 20px 24px}
+.edit-consulta-form{position:static;inset:auto;z-index:auto;display:grid;gap:20px;pointer-events:auto}
+.edit-field-group{display:grid;gap:8px;min-width:0}
+.edit-field-group label{color:#183b5b;font-size:17px;line-height:22px}
+.edit-field-group input{width:100%;height:52px;min-width:0;padding:0 20px;border:1.5px solid #1769aa;border-radius:10px;background:#fff;color:#183b5b;font:400 16px 'Atkinson Hyperlegible',Arial,sans-serif}
+.edit-field-group input::placeholder{color:#71869a;opacity:1}
+.edit-field-group input:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+.edit-map-group{min-width:0}
+.edit-consulta-map{display:block;width:100%;height:120px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6}
+.edit-consulta-actions{display:grid;gap:20px}
+.edit-save-button,.edit-cancel-button{width:100%;height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.edit-cancel-button{border:1.5px solid #1769aa;background:#fff;color:#1769aa}
+.edit-save-button:focus-visible,.edit-cancel-button:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+
+/* Remédios em componentes organizados e responsivos */
+.medication-page,.remedy-page{width:min(393px,100vw);height:auto;min-height:100vh;aspect-ratio:auto;overflow:visible;background:#fff}
+.medication-header,.remedy-page-header{min-height:104px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 24px;background:#0d3b66;color:#fff}
+.medication-header h1,.remedy-page-header h1{margin:0;color:#fff;font-size:24px;font-weight:700}
+.medication-header p{margin:6px 0 0;color:#e1edf5;font-size:14px}
+.medication-add-icon{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border:1px solid #ffffff75;border-radius:50%;color:#fff;font-size:30px;line-height:1;text-decoration:none}
+.medication-content,.remedy-page-content{padding:20px 24px 24px}
+.medication-content{display:grid;gap:20px}
+.medication-section{display:grid;gap:20px}
+.medication-section-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.medication-section-heading h2{margin:0;color:#0d3b66;font-size:20px}
+.medication-section-heading>a{color:#1769aa;font-size:15px;font-weight:700;text-decoration:none}
+.medication-list{position:static;width:100%;max-height:none;overflow:visible;display:grid;gap:20px;z-index:auto}
+.medication-card{min-height:0;padding:16px;border:1px solid #d9e5ed;border-radius:14px;background:#fff;color:#183b5b;box-shadow:0 2px 9px #0d3b6610;font-family:'Atkinson Hyperlegible',Arial,sans-serif}
+.medication-card h3{margin:0;color:#0d3b66;font-size:19px;font-weight:700}
+.medication-card p{margin:8px 0 0;font-size:14px;line-height:1.35}
+.medication-details-link{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 16px;border:1px solid #d9e5ed;border-radius:12px;color:#1769aa;font-size:15px;font-weight:700;text-decoration:none}
+.medication-details-link span{font-size:24px}
+.medication-add-button{height:54px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#1769aa;color:#fff;font-size:17px;font-weight:700;text-decoration:none}
+.medication-bottom-nav{min-height:56px;display:flex;align-items:center;justify-content:space-around;gap:12px;padding:8px 12px;border-top:1px solid #d9e5ed;background:#fff}
+.medication-bottom-nav a{color:#1769aa;font-size:13px;font-weight:700;text-decoration:none}
+.remedy-create-form{display:grid;gap:20px}
+.remedy-field-group{display:grid;gap:8px;min-width:0}
+.remedy-field-group label{color:#183b5b;font-size:17px;line-height:22px}
+.remedy-field-group input,.remedy-field-group select{width:100%;height:52px;min-width:0;padding:0 16px;border:1.5px solid #1769aa;border-radius:10px;background:#fff;color:#183b5b;font:400 16px 'Atkinson Hyperlegible',Arial,sans-serif}
+.remedy-field-group input::placeholder{color:#71869a;opacity:1}
+.remedy-field-group input:focus-visible,.remedy-field-group select:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+.remedy-create-actions{display:grid;gap:20px}
+.remedy-create-actions .remedy-save-button,.remedy-create-actions .remedy-cancel-button{width:100%;height:54px;flex:none;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.remedy-create-actions .remedy-cancel-button{border:1.5px solid #1769aa;background:#fff;color:#1769aa}
+.remedy-create-actions .remedy-save-button:focus-visible,.remedy-create-actions .remedy-cancel-button:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+.bottom-navigation{position:absolute;z-index:6;left:0;right:0;bottom:0;height:13.23cqw;display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;border-top:1px solid #dce6ed;background:#fff}
+.bottom-navigation-link{display:grid;place-items:center;color:#0d3b66;text-decoration:none}
+.bottom-navigation-icon{display:grid;place-items:center;width:10cqw;height:10cqw;border-radius:50%;font-size:7cqw;line-height:1}
+.bottom-navigation-link[aria-current="page"] .bottom-navigation-icon{background:#eaf3f8;color:#1769aa}
+.bottom-navigation-link:focus-visible{outline:3px solid #f3bb30;outline-offset:-4px}
+.medication-bottom-navigation{position:relative;bottom:auto;height:56px}
+.medication-bottom-navigation .bottom-navigation-icon{width:40px;height:40px;font-size:26px}
+.medication-card{display:block;color:inherit;text-decoration:none;cursor:pointer}
+.medication-card:hover{border-color:#1769aa;box-shadow:0 4px 14px #0d3b661c}
+.medication-card:focus-visible{outline:3px solid #f3bb30;outline-offset:3px}
+.medicine-detail-page{width:min(393px,100vw);height:auto;min-height:100vh;aspect-ratio:auto;overflow:visible;background:#fff}
+.medicine-detail-header{min-height:104px;display:flex;align-items:center;padding:18px 24px;background:#0d3b66;color:#fff}
+.medicine-detail-header h1{margin:0;color:#fff;font-size:24px}
+.medicine-detail-content{display:grid;gap:20px;padding:20px 24px 24px}
+.medicine-detail-card{display:grid;gap:16px;padding:20px;border:1px solid #d9e5ed;border-radius:15px;background:#fff}
+.medicine-detail-card h2{margin:0;color:#0d3b66;font-size:22px}
+.medicine-detail-fields{display:grid;gap:16px;margin:0}
+.medicine-detail-fields div{display:grid;gap:5px}
+.medicine-detail-fields dt{color:#647b8e;font-size:14px}
+.medicine-detail-fields dd{margin:0;color:#183b5b;font-size:17px;font-weight:700}
+.medicine-detail-message:empty{display:none}
+.medicine-detail-message{margin:0;color:#a12626;font-size:14px;line-height:1.4}
+.medicine-detail-actions{display:grid;gap:20px}
+.medicine-delete-button,.medicine-back-button{min-height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#b4232c;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.medicine-back-button{border:1.5px solid #1769aa;background:#fff;color:#1769aa}
+.medicine-delete-button:focus-visible,.medicine-back-button:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
