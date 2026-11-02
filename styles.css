@@ -11,7 +11,7 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:flex-start
 .shape{z-index:1;display:block;border:1px solid #d9e5ed;border-radius:12px;background:#fff}
 .header-bg{background:#0d3b66;border:0;border-radius:0}
 .card-shape{background:#fff;border-color:#d9e5ed;border-radius:15px;box-shadow:0 2px 6px #0d3b660b}
-.button-shape{background:#1769aa;border:0;border-radius:12px}
+.button-shape{background:#1769aa;border-radius:10px}
 .icon-shape{background:#eaf3f8;border:0;border-radius:50%}
 .bottom-nav-bar{background:#fff;border:0;border-top:1px solid #dce6ed;border-radius:0}
 .hotspot{position:absolute;z-index:5;display:block;background:transparent;color:transparent;text-decoration:none}
@@ -783,12 +783,19 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .appointment-field{position:absolute;left:45px;width:295px;height:32px;padding:4px 0;border:0;background:transparent;color:#183b5b;font:400 15px 'Atkinson Hyperlegible',Arial,sans-serif;outline-offset:2px;pointer-events:auto; cursor: pointer;}
 #appointment-specialty{top:181px}#appointment-date{top:306px}#appointment-time{top:431px}#appointment-location{top:556px}
 .appointment-field::placeholder{color:#71869a;opacity:1}
-.appointment-save-button{position:absolute;left:24px;top:671px;width:345px;height:65px;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;cursor:pointer;pointer-events:auto}
+.appointment-save-button{position:absolute;left:24px;bottom: 871px;width:345px;height:65px;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;cursor:pointer;pointer-events:auto}
 .appointment-cancel-button{position:absolute;left:24px;top:694px;width:345px;height:54px;display:flex;align-items:center;justify-content:center;border:1.5px solid #1769aa;border-radius:12px;background:#fff;color:#1769aa;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer;pointer-events:auto}
+#adicionar-consulta-conectasenior-2,#adicionar-consulta-conectasenior-2 .canvas{height:960px;aspect-ratio:auto;overflow:visible}
+#adicionar-consulta-conectasenior-2{height:min(960px,244.3vw)}
+#adicionar-consulta-conectasenior-2 .canvas{height:960px}
+#adicionar-consulta-conectasenior-2 #appointment-map{left:24px;top:608px;width:345px;height:200px;min-height:0;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6;pointer-events:auto}
+#adicionar-consulta-conectasenior-2 [data-node-id="2003:18"],#adicionar-consulta-conectasenior-2 [data-node-id="2003:19"]{display:none}
+#adicionar-consulta-conectasenior-2 .appointment-save-button{top:824px;height:54px}
+#adicionar-consulta-conectasenior-2 .appointment-cancel-button{top:890px}
 .edit-appointment-form #edit-specialty{top:164px}.edit-appointment-form #edit-date{top:258px}.edit-appointment-form #edit-time{top:352px}
 .edit-appointment-form #edit-location{left:24px;top:446px;width:345px;height:58px;padding:0 20px;border:1.5px solid #1769aa;border-radius:10px;background:#fff;color:#183b5b;font:400 15px 'Atkinson Hyperlegible',Arial,sans-serif}
 .edit-appointment-form #edit-location::placeholder{color:#71869a;opacity:1}
-.appointment-map{position:absolute;left:24px;top:512px;width:345px;height:100px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6;pointer-events:auto}
+.appointment-map{position:absolute;left:24px;top:512px;width:345px;min-height:200px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6;pointer-events:auto}
 #adicionar-consulta-conectasenior-3 [data-node-id="2021:20"]{display:none}
 .edit-appointment-form .appointment-save-button{top:628px;height:54px}
 #adicionar-consulta-conectasenior-3 [data-node-id="2021:8"]{top:132px}
@@ -857,7 +864,7 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .edit-field-group input::placeholder{color:#71869a;opacity:1}
 .edit-field-group input:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
 .edit-map-group{min-width:0}
-.edit-consulta-map{display:block;width:100%;height:120px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6}
+.edit-consulta-map{display:block;width:100%;height:200px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6}
 .edit-consulta-actions{display:grid;gap:20px}
 .edit-save-button,.edit-delete-button,.edit-cancel-button{width:100%;height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
 .edit-delete-button{border:1.5px solid #b4232c;background:#9b1f1f;color:#ffffff}
@@ -922,3 +929,17 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .medicine-delete-button,.medicine-back-button{min-height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#b4232c;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
 .medicine-back-button{border:1.5px solid #1769aa;background:#fff;color:#1769aa}
 .medicine-delete-button:focus-visible,.medicine-back-button:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+.accessibility-switch,.notification-switch{position:absolute;z-index:7;display:flex;align-items:center;width:49px;height:27px;padding:3px;border:0;border-radius:999px;background:#e8f2f6;cursor:pointer;pointer-events:auto}
+.accessibility-switch span,.notification-switch span{display:block;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px #0d3b6633;transition:transform .18s ease}
+.accessibility-switch.is-on,.notification-switch.is-on{background:#1769aa}
+.accessibility-switch.is-on span,.notification-switch.is-on span{transform:translateX(22px)}
+.accessibility-switch:focus-visible,.notification-switch:focus-visible{outline:3px solid #f3bb30;outline-offset:3px}
+.text-size-choice{position:absolute;z-index:6;display:block;border-radius:15px;background:transparent;cursor:pointer;pointer-events:auto}
+.text-size-small{left:24px;top:180px;width:345px;height:86px}
+.text-size-medium{left:24px;top:285px;width:345px;height:86px}
+.text-size-large{left:24px;top:390px;width:345px;height:86px}
+.text-size-choice input{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.text-size-choice:has(input:checked){background:#1769aa12;outline:3px solid #1769aa}
+.text-size-choice:focus-within{outline:3px solid #f3bb30;outline-offset:2px}
+html.a11y-high-contrast .artboard{filter:contrast(1.45)}
+html.a11y-high-contrast :focus-visible{outline:3px solid #000!important;outline-offset:3px!important}

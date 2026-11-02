@@ -37,7 +37,10 @@
     const card = document.createElement("a");
     card.className = "medication-card";
     card.id = `medication-${medicine.id}`;
-    card.href = `/pages/remedio-registrado.html?id=${encodeURIComponent(medicine.id)}`;
+    const caregiverContext = window.location.pathname.toLowerCase().startsWith("/pages/cuidador/");
+    card.href = caregiverContext
+      ? `/pages/cuidador/remedio-registrado-cuidador.html?id=${encodeURIComponent(medicine.id)}`
+      : `/pages/remedio-registrado.html?id=${encodeURIComponent(medicine.id)}`;
     card.setAttribute("aria-label", `Ver detalhes de ${medicine.name}`);
     const heading = document.createElement("div");
     heading.className = "medication-card-heading";
@@ -171,7 +174,10 @@
         }
         return;
       }
-      window.location.href = `/pages/meus-remedios.html?novo=${encodeURIComponent(medicine.id)}`;
+      const returnPage = window.location.pathname.toLowerCase().startsWith("/pages/cuidador/")
+        ? `/pages/cuidador/meus-remedios-cuidador.html?novo=${encodeURIComponent(medicine.id)}`
+        : `/pages/meus-remedios.html?novo=${encodeURIComponent(medicine.id)}`;
+      window.location.href = returnPage;
     });
   }
 
@@ -196,7 +202,9 @@
         if (!response.ok) throw new Error("Falha ao excluir remédio");
         medicines = await response.json();
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(medicines)); } catch { /* Persistência feita no JSON do servidor. */ }
-        window.location.href = "/pages/meus-remedios.html?excluido=1";
+        window.location.href = window.location.pathname.toLowerCase().startsWith("/pages/cuidador/")
+          ? "/pages/cuidador/meus-remedios-cuidador.html?excluido=1"
+          : "/pages/meus-remedios.html?excluido=1";
       } catch {
         deleteButton.disabled = false;
         if (message) message.textContent = "Não foi possível excluir no arquivo do projeto. Confira se o servidor está ativo e tente novamente.";

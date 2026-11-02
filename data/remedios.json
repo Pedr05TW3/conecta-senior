@@ -24,5 +24,18 @@
     "endDate": null,
     "sample": true,
     "status": "PENDENTE"
+  },
+  {
+    "id": "1793658468137-mt7ps8",
+    "name": "asdas",
+    "dosage": "asdasd",
+    "time": "09:00",
+    "instructions": "asdwa",
+    "duration": "continuous",
+    "durationLabel": "Uso contínuo",
+    "startDate": "2026-11-02",
+    "endDate": null,
+    "sample": false,
+    "status": "CADASTRADO"
   }
 ]

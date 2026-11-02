@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d3b66">
+  <title>Nova consulta · ConectaSênior</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <main class="artboard" id="adicionar-consulta-conectasenior-2" aria-label="Nova consulta">
+    <div class="canvas">
+      <i class="shape header-bg" data-node-id="2003:4" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:7" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:10" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:13" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:16" style="background-color: white; border-color: #1769aa;" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:18" aria-hidden="true"></i>
+      <h1 class="copy app-text app-page-title" data-node-id="2003:5">Nova consulta</h1>
+      <label class="copy" data-node-id="2003:6" for="appointment-specialty">Especialidade ou motivo</label>
+      <label class="copy" data-node-id="2003:9" for="appointment-date">Data</label>
+      <label class="copy" data-node-id="2003:12" for="appointment-time">Horário</label>
+      <label class="copy" data-node-id="2003:15" for="appointment-location">Local</label>
+      <form class="appointment-form" id="appointment-form">
+        <input class="appointment-field" id="appointment-specialty" name="specialty" type="text" placeholder="Ex.: Cardiologista" required>
+        <input class="appointment-field" id="appointment-date" name="date" type="date" required>
+        <input class="appointment-field" id="appointment-time" name="time" type="time" required>
+        <input class="appointment-field" id="appointment-location" name="location" type="text" placeholder="Clínica, endereço ou online" required>
+        <iframe id="appointment-map" class="appointment-map" title="Mapa do local da consulta" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="visually-hidden" id="appointment-form-message" role="status" aria-live="polite"></p>
+        <button class="appointment-save-button" type="submit">Salvar consulta</button>
+        <a class="appointment-cancel-button" href="/pages/cuidador/agenda-consultas-cuidador.html">Cancelar</a>
+      </form>
+    </div>
+  </main>
+  <script src="/scripts/consultas.js" defer></script>
+  <script src="/scripts/modo-prototipo.js" defer></script>
+</body>
+</html>
+
+

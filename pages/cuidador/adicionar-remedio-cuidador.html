@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d3b66">
+  <title>Adicionar remédio · ConectaSênior</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <main class="artboard remedy-page" id="adicionar-remedio-page" aria-label="Adicionar remédio">
+    <header class="remedy-page-header"><h1>Adicionar remédio</h1></header>
+    <div class="remedy-page-content">
+      <form id="remedy-form" class="remedy-create-form">
+        <div class="remedy-field-group">
+          <label for="remedy-name">Nome do remédio</label>
+          <input id="remedy-name" name="name" type="text" placeholder="Ex.: Losartana" autocomplete="off" required>
+        </div>
+        <div class="remedy-field-group">
+          <label for="remedy-dosage">Dosagem</label>
+          <input id="remedy-dosage" name="dosage" type="text" placeholder="Ex.: 50 mg" autocomplete="off" required>
+        </div>
+        <div class="remedy-field-group">
+          <label for="remedy-time">Horário</label>
+          <input id="remedy-time" name="time" type="time" value="09:00" required>
+        </div>
+        <div class="remedy-field-group">
+          <label for="remedy-instructions">Orientação</label>
+          <input id="remedy-instructions" name="instructions" type="text" placeholder="Ex.: Após o café" autocomplete="off">
+        </div>
+        <div class="remedy-field-group">
+          <label for="remedy-duration">Período de uso</label>
+          <select id="remedy-duration" name="duration" required>
+            <option value="">Selecione o período</option>
+            <option value="1-week">1 semana</option>
+            <option value="2-weeks">2 semanas</option>
+            <option value="1-month">1 mês</option>
+            <option value="3-months">3 meses</option>
+            <option value="6-months">6 meses</option>
+            <option value="continuous">Uso contínuo</option>
+          </select>
+        </div>
+        <p class="remedy-form-message visually-hidden" id="remedy-form-message" role="status" aria-live="polite"></p>
+        <div class="remedy-create-actions">
+          <button class="remedy-save-button" type="submit">Salvar remédio</button>
+          <a class="remedy-cancel-button" href="/pages/cuidador/painel-familia.html">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="/scripts/remedios.js" defer></script>
+  <script src="/scripts/modo-prototipo.js" defer></script>
+</body>
+</html>

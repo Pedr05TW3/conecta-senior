@@ -20,7 +20,10 @@
   function createAppointmentCard(item) {
     const card = document.createElement("a");
     card.className = "appointment-card";
-    card.href = `/pages/editar-consulta.html?id=${encodeURIComponent(item.id)}`;
+    const caregiverContext = window.location.pathname.toLowerCase().startsWith("/pages/cuidador/");
+    card.href = caregiverContext
+      ? `/pages/cuidador/editar-consulta-cuidador.html?id=${encodeURIComponent(item.id)}`
+      : `/pages/editar-consulta.html?id=${encodeURIComponent(item.id)}`;
     card.setAttribute("aria-label", `Editar consulta: ${item.specialty}, ${item.date}, ${item.time}`);
     const date = document.createElement("time");
     date.className = "appointment-date-badge";
@@ -58,7 +61,7 @@
     const map = document.getElementById("appointment-map");
     if (!map) return;
     const query = fields.location.value.trim();
-    map.src = `https://maps.google.com/maps?q=${encodeURIComponent(query || "Brasil")}&output=embed`;
+    map.src = `https://www.google.com/maps?q=${encodeURIComponent(query || "Brasil")}&output=embed`;
     map.title = query ? `Mapa do endereço: ${query}` : "Mapa do endereço da consulta";
   }
 
@@ -105,7 +108,10 @@
         if (message) { message.classList.remove("visually-hidden"); message.textContent = "Não foi possível salvar no servidor. Confira se o projeto está aberto pelo npm start e tente novamente."; }
         return;
       }
-      window.location.href = `/pages/agenda-consultas.html?${previous ? "atualizada" : "nova"}=${encodeURIComponent(appointment.id)}`;
+      const returnPage = window.location.pathname.toLowerCase().startsWith("/pages/cuidador/")
+        ? "/pages/cuidador/agenda-consultas-cuidador.html"
+        : "/pages/agenda-consultas.html";
+      window.location.href = `${returnPage}?${previous ? "atualizada" : "nova"}=${encodeURIComponent(appointment.id)}`;
     });
   }
   const deleteButton = document.getElementById("appointment-delete");
@@ -136,7 +142,10 @@
         if (!response.ok) throw new Error("Falha ao excluir consulta.");
         appointments = await response.json();
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(appointments)); } catch { /* Persistência garantida no arquivo do servidor. */ }
-        window.location.href = `/pages/agenda-consultas.html?excluida=${encodeURIComponent(editId)}`;
+        const returnPage = window.location.pathname.toLowerCase().startsWith("/pages/cuidador/")
+          ? "/pages/cuidador/agenda-consultas-cuidador.html"
+          : "/pages/agenda-consultas.html";
+        window.location.href = `${returnPage}?excluida=${encodeURIComponent(editId)}`;
       } catch {
         deleteButton.disabled = false;
         if (message) { message.classList.remove("visually-hidden"); message.textContent = "Não foi possível excluir a consulta do arquivo. Confira se o servidor está ativo e tente novamente."; }

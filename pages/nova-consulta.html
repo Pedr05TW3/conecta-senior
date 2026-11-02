@@ -14,7 +14,7 @@
       <i class="shape button-shape" data-node-id="2003:7" aria-hidden="true"></i>
       <i class="shape button-shape" data-node-id="2003:10" aria-hidden="true"></i>
       <i class="shape button-shape" data-node-id="2003:13" aria-hidden="true"></i>
-      <i class="shape button-shape" data-node-id="2003:16" aria-hidden="true"></i>
+      <i class="shape button-shape" data-node-id="2003:16" style="background-color: white; border-color: #1769aa;" aria-hidden="true"></i>
       <i class="shape button-shape" data-node-id="2003:18" aria-hidden="true"></i>
       <h1 class="copy app-text app-page-title" data-node-id="2003:5">Nova consulta</h1>
       <label class="copy" data-node-id="2003:6" for="appointment-specialty">Especialidade ou motivo</label>
@@ -26,10 +26,13 @@
         <input class="appointment-field" id="appointment-date" name="date" type="date" required>
         <input class="appointment-field" id="appointment-time" name="time" type="time" required>
         <input class="appointment-field" id="appointment-location" name="location" type="text" placeholder="Clínica, endereço ou online" required>
-        <p class="visually-hidden" id="appointment-form-message" role="status" aria-live="polite"></p>
+        <iframe id="appointment-map" class="appointment-map" title="Mapa do local da consulta" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="visually-hidden" id="appointment-form-message" role="status" aria-live="polite" ></p>
         <button class="appointment-save-button" type="submit">Salvar consulta</button>
+        <a class="appointment-cancel-button" href="/pages/agenda-consultas.html">Cancelar</a>
       </form>
     </div>
+
   </main>
   <script src="/scripts/consultas.js" defer></script>
   <script src="/scripts/modo-prototipo.js" defer></script>
