@@ -22,14 +22,15 @@
     card.className = "appointment-card";
     card.href = `/pages/editar-consulta.html?id=${encodeURIComponent(item.id)}`;
     card.setAttribute("aria-label", `Editar consulta: ${item.specialty}, ${item.date}, ${item.time}`);
-    const date = document.createElement("span");
+    const date = document.createElement("time");
     date.className = "appointment-date-badge";
+    date.dateTime = item.date;
     date.textContent = dateLabel(item.date);
-    const details = document.createElement("span");
+    const details = document.createElement("div");
     details.className = "appointment-details";
     const title = document.createElement("strong");
     title.textContent = item.specialty;
-    const meta = document.createElement("span");
+    const meta = document.createElement("p");
     meta.textContent = `${item.time} · ${item.location}`;
     details.append(title, meta);
     card.append(date, details);
@@ -107,5 +108,40 @@
       window.location.href = `/pages/agenda-consultas.html?${previous ? "atualizada" : "nova"}=${encodeURIComponent(appointment.id)}`;
     });
   }
-  initialize();
+  const deleteButton = document.getElementById("appointment-delete");
+  if (deleteButton) {
+    deleteButton.addEventListener("click", async () => {
+      await initialized;
+      const message = document.getElementById("appointment-form-message");
+      if (!editId) {
+        if (message) { message.classList.remove("visually-hidden"); message.textContent = "Não foi possível identificar a consulta para excluir."; }
+        return;
+      }
+      deleteButton.disabled = true;
+      try {
+        const currentResponse = await fetch("/api/consultas", { cache: "no-store" });
+        if (!currentResponse.ok) throw new Error("Falha ao carregar consultas.");
+        const current = await currentResponse.json();
+        if (!Array.isArray(current) || !current.some((item) => item.id === editId)) {
+          if (message) { message.classList.remove("visually-hidden"); message.textContent = "Esta consulta não foi encontrada no arquivo."; }
+          deleteButton.disabled = false;
+          return;
+        }
+        const remaining = current.filter((item) => item.id !== editId);
+        const response = await fetch("/api/consultas", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(remaining)
+        });
+        if (!response.ok) throw new Error("Falha ao excluir consulta.");
+        appointments = await response.json();
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(appointments)); } catch { /* Persistência garantida no arquivo do servidor. */ }
+        window.location.href = `/pages/agenda-consultas.html?excluida=${encodeURIComponent(editId)}`;
+      } catch {
+        deleteButton.disabled = false;
+        if (message) { message.classList.remove("visually-hidden"); message.textContent = "Não foi possível excluir a consulta do arquivo. Confira se o servidor está ativo e tente novamente."; }
+      }
+    });
+  }
+  const initialized = initialize();
 })();

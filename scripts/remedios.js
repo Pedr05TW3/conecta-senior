@@ -43,7 +43,7 @@
     heading.className = "medication-card-heading";
     const name = document.createElement("h3");
     name.textContent = medicine.name;
-    const status = document.createElement("span");
+    const status = document.createElement("p");
     status.className = `medication-status${medicine.sample ? "" : " medication-status-new"}`;
     status.textContent = medicine.status || "CADASTRADO";
     heading.append(name, status);

@@ -7,14 +7,14 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:flex-start
 .canvas{position:absolute;left:0;top:0;width:393px;height:852px;overflow:hidden;transform:scale(calc(100cqw / 393px));transform-origin:top left;background:#fff}
 .asset,.copy,.shape{position:absolute}
 .asset{display:block;max-width:none;z-index:1}
-.copy{z-index:3;display:block;line-height:1.1;white-space:nowrap;overflow:visible;pointer-events:none}
+.copy{z-index:3;display:block;margin:0;font-weight:inherit;line-height:1.1;white-space:nowrap;overflow:visible;pointer-events:none}
 .shape{z-index:1;display:block;border:1px solid #d9e5ed;border-radius:12px;background:#fff}
 .header-bg{background:#0d3b66;border:0;border-radius:0}
 .card-shape{background:#fff;border-color:#d9e5ed;border-radius:15px;box-shadow:0 2px 6px #0d3b660b}
 .button-shape{background:#1769aa;border:0;border-radius:12px}
 .icon-shape{background:#eaf3f8;border:0;border-radius:50%}
 .bottom-nav-bar{background:#fff;border:0;border-top:1px solid #dce6ed;border-radius:0}
-.hotspot{position:absolute;z-index:5;display:block;background:transparent;color:transparent;text-decoration:none;color: white;}
+.hotspot{position:absolute;z-index:5;display:block;background:transparent;color:transparent;text-decoration:none}
 .hotspot:focus-visible{outline:3px solid #f3bb30;outline-offset:2px;border-radius:8px}
 @media(max-width:393px){.artboard{width:100vw}}
 
@@ -238,7 +238,7 @@ a[data-hotspot="dashboard-familia-conectasenior-tab-2"]{left:262px;top:800px;wid
 [data-node-id="2001:1272"]{left:24px;top:611px;width:345px;height:65px}
 [data-node-id="2001:1274"]{left:0px;top:800px;width:393px;height:52px}
 [data-node-id="2001:1247"]{left:24px;top:40px;width:172px;height:32px;font-size:24px;}
-[data-node-id="2001:1248"]{left:336px;top:36px;width:30px;height:36px;font-size:24px;}
+[data-node-id="2001:1248"]{left:336px;top:36px;width:30px;height:36px;font-size:24px; color: white;}
 [data-node-id="2001:1249"]{left:24px;top:126px;width:162px;height:27px;font-size:21px;}
 [data-node-id="2001:1250"]{left:344px;top:122px;width:14px;height:31px;font-size:24px;}
 [data-node-id="2001:1252"]{left:56px;top:192px;width:39px;height:19px;font-size:16px;}
@@ -749,7 +749,7 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .medication-card{box-sizing:border-box;min-height:137px;padding:17px 15px 13px 20px;border:1px solid #e1e8ef;border-radius:15px;background:#fff;color:#183b5b;box-shadow:0 2px 9px #0d3b6610;font-family:Arial,sans-serif}
 .medication-card-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .medication-card h2{margin:0;color:#0d3b66;font-size:19px;font-weight:600}
-.medication-status{padding:5px 8px;border-radius:12px;background:#e7f5ec;color:#247347;font-size:9px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+.medication-status{padding:5px 8px;border-radius:12px;background:#e7f5ec;color:#247347;font-size:13px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
 .medication-status-new{background:#e7f1fa;color:#1769aa}
 .medication-card p{margin:7px 0 0;font-size:13px;line-height:1.3}
 .medication-dosage{font-weight:500}.medication-schedule{color:#536a7f}.medication-period{color:#1769aa;font-size:11px!important}
@@ -773,11 +773,11 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 /* Acompanhamento de consultas */
 #agenda-consultas-conectasenior [data-node-id="2001:1251"],#agenda-consultas-conectasenior [data-node-id="2001:1252"],#agenda-consultas-conectasenior [data-node-id="2001:1253"],#agenda-consultas-conectasenior [data-node-id="2001:1254"],#agenda-consultas-conectasenior [data-node-id="2001:1255"],#agenda-consultas-conectasenior [data-node-id="2001:1256"],#agenda-consultas-conectasenior [data-node-id="2001:1257"],#agenda-consultas-conectasenior [data-node-id="2001:1258"],#agenda-consultas-conectasenior [data-node-id="2001:1259"],#agenda-consultas-conectasenior [data-node-id="2001:1260"],#agenda-consultas-conectasenior [data-node-id="2001:1261"],#agenda-consultas-conectasenior [data-node-id="2001:1262"],#agenda-consultas-conectasenior [data-node-id="2001:1263"],#agenda-consultas-conectasenior [data-node-id="2001:1264"],#agenda-consultas-conectasenior [data-node-id="2001:1265"],#agenda-consultas-conectasenior [data-node-id="2001:1266"],#agenda-consultas-conectasenior [data-node-id="2001:1267"],#agenda-consultas-conectasenior [data-node-id="2001:1268"],#agenda-consultas-conectasenior [data-node-id="2001:1269"],#agenda-consultas-conectasenior [data-node-id="2001:1270"],#agenda-consultas-conectasenior [data-node-id="2001:1271"]{display:none!important}
 .appointment-list{position:absolute;left:24px;top:172px;width:345px;height:425px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:0 0 5px;z-index:4;scrollbar-width:thin}
-.appointment-card{box-sizing:border-box;min-height:92px;display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #d9e5ed;border-radius:14px;background:#fff;color:#183b5b}
-.appointment-date-badge{width:48px;min-width:48px;height:48px;display:grid;place-items:center;border-radius:9px;background:#1769aa;color:#fff;font-size:12px;font-weight:700;text-align:center}
+.appointment-card{box-sizing:border-box;min-height:112px;display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #d9e5ed;border-radius:14px;background:#fff;color:#183b5b}
+.appointment-date-badge{width:54px;min-width:48px;height:54px;display:grid;place-items:center;border-radius:9px;background:#1769aa;color:#fff;font-size:12px;font-weight:700;text-align:center}
 .appointment-card{color:inherit;text-decoration:none;cursor:pointer}.appointment-card:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
-.appointment-details h2{margin:0;color:#1f2933;font-size:16px;font-weight:700}.appointment-details p{margin:6px 0 0;color:#647b8e;font-size:13px;line-height:1.25}
-.appointment-details strong{display:block;color:#1f2933;font-size:16px;font-weight:700}.appointment-details>span{display:block;margin-top:6px;color:#647b8e;font-size:13px;line-height:1.25}
+.appointment-details h2{margin:0;color:#1f2933;font-size:22px;font-weight:700}.appointment-details p{margin:6px 0 0;color:#647b8e;font-size:13px;line-height:1.25}
+.appointment-details strong{display:block;color:#1f2933;font-size:22px;font-weight:700}.appointment-details>span{display:block;margin-top:6px;color:#647b8e;font-size:13px;line-height:1.25}
 /* Formulário para inclusão de consultas */
 .appointment-form{position:absolute;inset:0;z-index:8;pointer-events:none}
 .appointment-field{position:absolute;left:45px;width:295px;height:32px;padding:4px 0;border:0;background:transparent;color:#183b5b;font:400 15px 'Atkinson Hyperlegible',Arial,sans-serif;outline-offset:2px;pointer-events:auto; cursor: pointer;}
@@ -817,7 +817,7 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .help-cancel-button{margin-top:10px;border:1px solid #1769aa;background:#fff;color:#1769aa}
 
 /* Títulos nos cabeçalhos azuis */
-.canvas:has(> .header-bg) > .copy:first-of-type{color:#fff!important}
+.canvas:has(> .header-bg) > .app-page-title{color:#fff!important}
 #home-idoso-conectasenior [data-node-id="2001:1150"],#home-idoso-conectasenior [data-node-id="2001:1151"]{color:#fff!important}
 
 /* Ajustes visuais do painel do cuidador alinhados à tela inicial do idoso */
@@ -859,9 +859,10 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .edit-map-group{min-width:0}
 .edit-consulta-map{display:block;width:100%;height:120px;border:1px solid #d9e5ed;border-radius:10px;background:#eef3f6}
 .edit-consulta-actions{display:grid;gap:20px}
-.edit-save-button,.edit-cancel-button{width:100%;height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.edit-save-button,.edit-delete-button,.edit-cancel-button{width:100%;height:54px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:#1769aa;color:#fff;font:700 17px 'Atkinson Hyperlegible',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.edit-delete-button{border:1.5px solid #b4232c;background:#9b1f1f;color:#ffffff}
 .edit-cancel-button{border:1.5px solid #1769aa;background:#fff;color:#1769aa}
-.edit-save-button:focus-visible,.edit-cancel-button:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
+.edit-save-button:focus-visible,.edit-delete-button:focus-visible,.edit-cancel-button:focus-visible{outline:3px solid #f3bb30;outline-offset:2px}
 
 /* Remédios em componentes organizados e responsivos */
 .medication-page,.remedy-page{width:min(393px,100vw);height:auto;min-height:100vh;aspect-ratio:auto;overflow:visible;background:#fff}
@@ -902,6 +903,7 @@ a[data-hotspot="agenda-new-consultation"]{left:24px;top:611px;width:345px;height
 .medication-bottom-navigation{position:relative;bottom:auto;height:56px}
 .medication-bottom-navigation .bottom-navigation-icon{width:40px;height:40px;font-size:26px}
 .medication-card{display:block;color:inherit;text-decoration:none;cursor:pointer}
+.medication-card .medication-status,.medicine-detail-card .medication-status{margin:0}
 .medication-card:hover{border-color:#1769aa;box-shadow:0 4px 14px #0d3b661c}
 .medication-card:focus-visible{outline:3px solid #f3bb30;outline-offset:3px}
 .medicine-detail-page{width:min(393px,100vw);height:auto;min-height:100vh;aspect-ratio:auto;overflow:visible;background:#fff}
